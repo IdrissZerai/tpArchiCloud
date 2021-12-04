@@ -21,9 +21,9 @@ public class SendStatus {
 
     public void convert(String file) throws InterruptedException {
         // conversion will take 0.1sec per 1% i.e 10sec in total
-        for(int i=0;i<=100;i++){
+        for(int i=1;i<=10;i++){
             reportStatus(file,i);
-            Thread.sleep(100);
+            Thread.sleep(1000);
         }
     }
 
