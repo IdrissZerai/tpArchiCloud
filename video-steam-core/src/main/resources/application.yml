@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: tparchi
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+logging:
+  level:
+    org: ERROR
+
+server:
+  port: 8081
