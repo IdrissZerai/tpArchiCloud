@@ -33,11 +33,12 @@ public class SenderController {
     MessageService messageService;
 
     @GetMapping("convert-file/{filename}")
-    public void send(@PathVariable String filename){
+    public String send(@PathVariable String filename){
         log.info("Sending message to convert file: " + filename);
         log.info("In queue: " + queue1.getName());
         messageService.save(new FileStatus(filename, 0));
         template.convertAndSend(queue1.getName(),filename);
+        return "Converting file: "+filename+" check mobile app for conversion status";
     }
 
     @GetMapping("convert-status/{filename}")
